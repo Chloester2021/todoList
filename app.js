@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -10,7 +10,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://Admin-cfang:TestChloeFang@cluster0.bmjey.mongodb.net/todolistDB");
+mongoose.connect(process.env.MONGO_DB);
 const itemSchema = new mongoose.Schema({
   name: String,
 });
