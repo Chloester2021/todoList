@@ -17,9 +17,9 @@ const itemSchema = new mongoose.Schema({
 
 const Item = mongoose.model("Item", itemSchema);
 
-const item1 = new Item({ name: "Finish web development lesson" });
-const item2 = new Item({ name: "Exercise" });
-const item3 = new Item({ name: "Watch TV" });
+const item1 = new Item({ name: "Welcome to the todo list" });
+const item2 = new Item({ name: "Hit the + to add a new item." });
+const item3 = new Item({ name: "Hit the checkbox to delete an item." });
 const defaultArray = [item1, item2, item3];
 const listSchema = {
   name: String,
@@ -121,7 +121,7 @@ app.get("/:customListName", function (req, res) {
 });
 
 
-app.get("/about", function (req, res) {
+app.get("/infor/about", function (req, res) {
   res.render("about");
 });
 
